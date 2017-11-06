@@ -1,0 +1,623 @@
+Login to support website: centec/centec123
+
+Login to clearquest: centec/OPmw725bgU
+
+
+
+debug cmodel pkt chip 0 chan 0                                             
+debug cmodel pkt recv network                                              
+debug cmodel pkt send network                                              
+setenv ipaddr 10.10.29.111
+save
+
+TCPDUMP 工具wire shark
+ tcpdump -i eth51 -s 500 -w /sw/chenyq2/packet.cap
+
+
+按日期up回退代码：
+svn up -r{2009-08-31}
+                
+bdimg.sh -i pizza_box d  
+ 
+scp ~/v2_3/platform/build_svc/uImage_ma.pizza_box.r root@10.10.29.160:/tftpboot/uImage.cc
+copy tftp://10.10.29.160/uImage.cc flash:/boot/uImage.cc
+
+boot system flash:/boot/uImage.chen		 
+show boot images 
+reload 
+
+scp ~/e800/platform/build_svc/uImage_ma.atca_svc.d root@10.10.29.160:/tftpboot/uImage.cc
+
+
+handle SIGPIPE nostop
+
+Centec#start shell
+Password: 
+[root@Centec /mnt/flash]$ 
+[root@Centec /mnt/flash]$ 
+[root@Centec /mnt/flash]$ cd boot/
+[root@Centec /mnt/flash/boot]$ ls
+
+
+1  [root@Centec /mnt/flash]$ gdbserver 10.10.29.249:5678 --attach 782
+2  nsm 下 ppc-linux-gdb nsm    ->   target remote 10.10.29.249:5678
+handle SIGPIPE nostop
+
+
+lsmod 列内核
+dmesg 后台信息 
+netstat -na | less  看内核绑定信息
+
+patch -p0 < ~/diff
+
+show route-mac
+scp ~/v2_0/platform/build_svc/tmp/cmodel.ko root@10.10.29.27:/tftpboot/cmodel.ko
+Centec#copy tftp://10.10.29.27/cmodel.ko flash:/boot/chen.comdel.ko
+
+
+mknod /dev/ctc_cmodel c 121 0
+mac-address-table 0.1.2 forward eth-0-9 vlan 1
+
+vi -> split
+
+nm chsm | grep show_fwd_set_pkt 找二进制文件
+
+[chenyq2@sw2 regression]$ expect ../../platform/TestScheduler.tcl -t release_trunk_list.tsc -p topo.cfg -e hemu -rb true -sb true > result_213.txt
+
+find . -name "*.tcl" |  xargs sed -i  's| ipv4 | ip |g'
+sed -i 's/show mac address-table/show  mac-address-table/' *.tcl
+
+
+
+gdb linux
+1 cp /sw/pub/release/uml/trunk/uml-latest/_gdbinit tools/start_uml/dut1uml .gdbinit
+2 before insmode mpls.ko , set waiting, "after 20000"
+2.5  cd software/Code/ctp/tools/start_uml/dut1uml
+3 ps -u chenyq2, gdb "expect"之后第一个linux 的进程号 gdb linux 1350
+4 b add_sect_attrs 
+4.5 c
+5 print_lkm_sections
+
+
+zhenghd(郑海东) 16:40:08
+DsChannelShapeProfile
+6
+(gdb) print_lkm_sections 
+load_module (umod=0x4014b008, len=773882, uargs=0x804a008 "? \b1?^_]??\006")
+    at /sw/release/dev/trunk/platform/linux/include/linux/unwind.h:84
+84      {
+0x208be000 -s .data 0x208d6c80 -s .bss 0x208d7080
+(gdb) add-symbol-file /sw/chenyq2/zebos/sbin/mpls.ko 0x208be000 -s .data 0x208d6
+c80 -s .bss 0x208d7080
+
+7 y
+
+
+解压.gz文件：gzip -d
+
+
+anvl得vnc: 10.10.29.162:88
+
+看pc的接口信息：ifconfig
+
+
+tcpdump 板子
+mkdir /tools
+mount -t nfs -o nfsvers=2,tcp,nolock 10.10.29.250:/home/EP8245/data /tools
+/tools/bin/tcpdump <options>
+
+
+10.10.29.180
+login:ep8245
+pass:test
+
+10.10.29.196
+login:labtest
+pass:intlabtest
+
+[chenyq2@sw2 ~]$ cd zebos/sbin/
+[chenyq2@sw2 sbin]$ ./ssh -Q root@10.10.29.127
+ppc-trace
+ppc-strace -p 744
+
+发包工具
+nemesis ethernet -d eth56 -H 01:80:c2:00:00 -M 34:89:dc:73:8e:09 
+
+GDB看数组
+gdb *a @ len
+
+
+DUT1(diag)# read gigaphy 3 0x17 
+Port  3 phy register 0x17        value:0x4
+
+
+show stm prefer det
+dmsg
+
+
+wangw(王巍) 14:03:47
+vi software/Code/sys.mk
+VENDOR = adt
+vi platform/build_svc/build_svc.sh
+product_name="E300"
+wangyj(王亚军) 14:22:04
+release_adt_22.sh 2.3.16.fcs 
+
+曹坤(曹坤) 16:25:48
+cd ctcos/platform/linux
+./build_uml.sh outdir
+
+outdir是你希望的输出路径
+
+
+DUT1# diag
+Password: 
+DUT1(diag)# show bay 0 module stats 
+end    start  
+DUT1(diag)# show bay 0 module stats start 
+Start to calc the packet, please run end CLI when stop packet transmission.
+DUT1(diag)# show bay 0 module stats end 
+MacMux is OK
+ NetRx: NoEop[0] NoSop[217] 
+   IPE is OK
+
+ftp server:58.210.9.219
+support
+professional
+
+wangwrelease
+centec.123
+
+command:
+copy ftp://58.210.9.219/adiOS0310.bin flash:/.
+
+
+磁盘空间情况
+df 
+du -s *
+
+
+bdimg.sh a r  编800
+bdimg.sh p r 编300
+
+
+
+CtcEX-LC# run capture bay 0 tcam 
+capture 4 latency 24
+
+CtcEX-LC# check capture bay 0 tcam flash:
+flash:/log      flash:/syslog   flash:/tcpdump  
+CtcEX-LC# check capture bay 0 tcam flash:/captcam.txt
+
+CtcEX-LC# q
+[root@CtcEX-LC ~]$ cat /mnt/flash/captcam.txt 
+tcamkey:00/00010100/5e000005//00/2032001e/080845d0//90/0000fe59/002c0201//00/e0000005/ac0a143f
+        keyInst:0x5 index0:0xd008, index1:0xfff4
+tcamkey:04/e0320100/5e000005
+        keyInst:0x0 index0:0x7006, index1:0xfffff
+tcamkey:04/e032001e/080845d0
+        keyInst:0x0 index0:0x7006, index1:0xfffff
+
+gdb 子进程
+set follow-fork-mode child
+
+chvrf 65 telnet 172.16.slot.1
+
+
+>> [root@PE4 /mnt/flash]$ strace -p 911
+
+\\10.10.25.20\all\pub\张卫峰\Base Version   盛科网络图标库(20100114v2)
+
+svn copy http://10.10.25.20/svn/ctcos/trunk/code/ http://10.10.25.20/svn/ctcos/branches/branch_for_seoul_code_release_0921 -m"add by chenyuqiang for seoul customer"
+svn remove http://10.10.25.20/svn/ctcos/branches/branch_for_seoul_code_release -m"add by chenyuqiang for seoul customer"
+
+svn copy http://10.10.25.20/svn/ctcos/branches/v3.0.2/@89178 http://10.10.25.20/svn/ctcos/tags/v3.0.2.12.it/ -m"add v3.0.12 tag"
+svn remove http://10.10.25.20/svn/ctcos/branches/branch_for_seoul_v3.0.2.12 -m"add by chenyuqiang for seoul customer"
+
+svn copy http://10.10.25.20/svn/ctcos/tags/v3.0.2.19.it/code/ http://10.10.25.20/svn/ctcos/branches/branch_for_seoul_v3.0.2.19 -m"add by chenyuqiang for seoul customer"
+svn remove http://10.10.25.20/svn/ctcos/branches/branch_for_ams_v3.0.2.14 -m"add by chenyuqiang for seoul customer"
+
+svn remove http://10.10.25.60/svn/cos/branches/osp_system_sai -m"delete"
+
+
+
+
+
+svn 帐户：test_seoul   seoulctc
+user帐户：seoul01,seoul02,seoul03,seoul04,  seoulctc
+
+find . -type d -name ".svn"|xargs rm -rf 
+find |xargs wc -l *
+
+find . -type d -name ".c"|xargs wc -l 
+
+tar zcvf 包名  文件1/文件夹1 文件2/文件夹2 
+
+
+set solib-search-path /opt/gcc-4.3/mips64-octeon-linux-gnu/lib
+set solib-search-path /opt/gcc-4.3/mips64-octeon-linux-gnu/sys-root/lib32
+
+ svn diff --summarize --old=http://10.10.25.20/svn/ctcos/branches/branch_for_seoul_code_release_0926/platform --new=http://10.10.25.20/svn/ctcos/trunk/code/platform > ~/diff_kernel.txt
+
+
+find  -name "nsm_*.[ch]" | sed -r 's/(.*)(nsm)(.*)/mv \1\2\3 \1ctcplt\3;/g' | xargs bash
+find . -type d -iname ".svn" -exec rm -rf {} \;  
+ find . -type d -name ".svn"|xargs rm -rf
+
+zhongq(钟强) 13:44:56
+sorry,  ssh的password:centec username:ams01 - 04   vncpassword:amsctc
+
+trunk/code/platform/linux/usr/g24eu.bit.gz
+
+
+find -name '*.[ch]' | sed -r 's/(.*)/perl remove_macro.pl HAVE_CRX \1 > \1.new; mv \1.new \1/g' > temp.sh
+sh temp.sh
+find -name '*.[ch]' | sed -r 's/(.*)/perl remove_macro.pl HAVE_IPSEC \1 > \1.new; mv \1.new \1/g' > temp.sh
+sh temp.sh
+find -name '*.[ch]' | sed -r 's/(.*)/perl remove_macro.pl HAVE_RMM \1 > \1.new; mv \1.new \1/g' > temp.sh
+sh temp.sh
+
+
+svn st | xargs svn revert
+svn merge  http://10.10.25.20/svn/ctcos/branches/branch_for_ams_code_release_1117/software/zebos@87377 http://10.10.25.20/svn/ctcos/branches/branch_for_ams_code_release_1117/software/zebos@86822 .
+
+
+add_line_count='grep"^+"$TEMPFILE|grep -V"^+++"|sed 's/^.//'|sed '/^$/d'|wc -l'
+
+陈玉强(陈玉强) 20:17:54
+.out文件通过什么命令看的
+朱坚(朱坚) 20:18:44
+gprof
+陈玉强(陈玉强) 20:18:24
+有参数么
+朱坚(朱坚) 20:20:07
+-q 
+
+
+gdbtui nsm 985 
+
+or 
+refresh 
+focus src
+focus cmd
+
+
+张卫峰(张卫峰) 09:40:53
+centec
+IPI的web登陆账号，密码变成了suzhou123
+
+朱坚(朱坚) 13:22:06
+\\10.10.25.20\all\Public\R&D\SW\openflow
+朱坚(朱坚) 13:17:26
+http://10.10.25.20/svn/system_docs/trunk/project/
+
+
+find -name "*.[c|h]" | xargs cat | grep -r "^\s*$" | wc -l
+
+kcao(曹坤) 14:14:45
+玉强，他们有没有注册fatal interrupt，如果注册是否发生过fatal interrupt，都可以从linux的命令里面看得到的
+譬如，在我们的系统上
+[root@DUT1 /mnt/flash]$ cat /proc/interrupts 
+           CPU0       
+ 16:          0   CPM2 SIU  Level     cpm_uart
+ 17:       7267   CPM2 SIU  Level     cpm_i2c
+ 20:          5   CPM2 SIU  Level     ctc_phy_dpll
+ 21:         12   CPM2 SIU  Level     asic_normal
+ 22:       4553   CPM2 SIU  Level     foam_normal
+ 23:          0   CPM2 SIU  Level     asic_fatal      <------
+
+
+lcsh# show hagt intr file 
+
+pkt=Ether(dst="fe:5f:9d:74:86:00",src="0:2:0:2:0:2")/MPLS(label=20,ttl=20,s=0)/MPLS(label=30,ttl=30)/MPLS(label=4,ttl=85,s=0,cos=2)/Ether(dst="00:1f:fe:af:ad:fb",src="0:1:0:1:0:2")/IP(dst="1.1.1.1",src="2.2.2.2")
+
+source /ctcdata/users/sw/zhangdy/script/x86pyenv.sh 
+scapy
+pkt=Ether(dst="ee:e4:94:ce:00:00",src="0:2:0:2:0:2")/MPLS(label=21,ttl=20,s=0)/MPLS(label=31,ttl=30)/Ether(dst="00:1f:fe:af:ad:fb",src="0:1:0:1:0:2")/IP(dst="1.1.1.1",src="2.2.2.2")
+sendp(pkt,iface="eth0")
+
+source /ctcdata/users/sw/zhangdy/script/x86pyenv.sh 
+scapy
+pkt=Ether(dst="52:14:49:d8:cb:00",src="0:2:0:2:0:2")/Dot1Q(vlan=2)/IP(dst="5.5.5.1",src="6.6.6.6")
+pkt=Ether(dst="ff:ff:ff:ff:ff:ff",src="0:2:0:2:0:2")/ARP()
+sendp(pkt,iface="eth0")
+
+
+source /ctcdata/users/sw/zhangdy/script/x86pyenv.sh 
+scapy
+pkt=Ether(dst="01:80:c2:00:00:02",src="0:2:0:3:0:4", type=0x0800)/IP(dst="5.5.5.1",src="6.6.6.6")
+sendp(pkt,iface="eth2")
+
+define pp
+ p $arg0.toString(16,0,0,0)._M_dataplus._M_p
+end
+
+
+
+
+
+
+
+[chenyq2@centecbk build_svc]$ ftp 10.10.25.33
+ftp> put uImage.fscl.hw_pizza_box.r
+
+vtysh
+ctcli_dg
+
+
+source /swpj/swuser/zhangdy/script/x86pyenv.sh
+scapy
+pkt=Ether(dst="36:be:e1:11:e2:00",src="0:2:0:2:0:2")/MPLS(label=10,ttl=20,s=1)/Ether(dst="00:1f:fe:af:ad:fb",src="0:1:0:1:0:2")/IP(dst="1.1.1.1",src="2.2.2.2")
+sendp(pkt,iface="eth0")
+
+
+pkt=Ether(dst="00:00:00:00:00:01",src="0:0:0:0:0:aa")/Dot1Q(vlan=10)/IP(dst="5.5.5.1",src="6.6.6.6")
+sendp(pkt,iface="eth0")
+
+nemesis ethernet -d eth0 -H 00:00:00:00:00:04 -P /ctcdata/users/sw/yejl/diff/vlan_cfg.diff
+
+ 
+ 
+用户名ctcseoul
+密码centec1111
+
+ctcams
+ctc1119
+
+GBPTN P1版本
+v2.1.0.15.6
+
+
+(config)# rx-mac-check-disable 
+(config)# no rx-mac-check-disable 
+
+
+
+[root@DUT1 /tmp]$ ls -lt --full-time
+
+
+set sysroot /opt/freescale-2010.09/powerpc-linux-gnu/libc
+
+
+
+[chenyq2@centecbk ~]$ telnet 10.10.38.160
+Trying 10.10.38.160...
+Connected to 10.10.38.160 (10.10.38.160).
+Escape character is '^]'.
+Red Hat Enterprise Linux AS release 4 (Nahant Update 8)
+Kernel 2.6.9-89.EL on an i686
+login: centec
+Password: 
+Last login: Tue Jul 15 08:19:12 from 10.10.38.222
+[centec@localhost ~]$ cd /home/centec/
+[centec@localhost ~]$ ./ssh -Q root@10.10.39.66
+/etc/ssh/ssh_config line 39: Unsupported option "GSSAPIAuthentication"
+root@10.10.39.66's password: 
+
+
+
+[root@DUT1 /mnt/flash]$ chvrf 64 tftp -v -Z 10.10.38.160 -c put -r hsrvd.core.2001_0105_1139.gz -l hsrvd.core.2001_0105_1139.gz
+
+
+/opt/fsl-networking/QorIQ-SDK-V1.4/sysroots/i686-fsl_networking_sdk-linux/usr/bin/ppce500v2-fsl_networking-linux-gnuspe
+powerpc-fsl_networking-linux-gnuspe-gdb  ~/v5.2/out.48t4x/build.p1010.r/bin/onmd onmd.core.2014_0715_1700
+
+
+maxxujun(许俊) 20:50:47
+包率计算：
+CoreFreq = (IO bandwidth Gbps) /8/(PktLen + 20) * 3 * 1000
+
+例如， IO 端口总共128G你全部用上了，那么上面式子 (IO bandwidth Gbps) = 128Gbps
+PktLen = 64Bytes
+CoreFreq = 128/8/(64+20) *3 * 1000 = 571.43 MHz
+maxxujun(许俊) 20:51:39
+公式中的 *3，表示芯片内部处理一个报文msg平均需要3个cycle
+550M*8*84/128/1000
+
+
+ps -Llef | grep hsrv
+
+
+write tbl-name nettxforcetxcfg tbl-index 0 fld-id 2 value 0xfffffff
+
+read tbl-name DsQueShpWfqCtl tbl-index 0
+
+
+_sys_greatbelt_port_mac_flush_en
+
+
+如果要gdb可以这样用
+[uml: /sw/kcao/osp/umlimage/osp/sbin]$ gdb cdbctl 
+(gdb) set args read/cdb/interface/eth-0-1
+(gdb) r
+
+cuixl(崔兴龙) 14:06:24
+ 
+大家在bashrc中做个alias,上次OSP的ctp/platform升级后, 跑板子上case需要用这个expect
+
+
+
+tftp 服务器 10.10.38.160
+串口服务器 10.10.38.170
+ftp服务器 10.10.25.33
+
+
+usermod -s /bin/bash zabbix
+./buildout/sbin/zabbix_agentd  -c ./buildout/etc/zabbix_agentd.conf
+root@centec:/# useradd zabbix
+root@centec:/# su zabbix
+
+
+The mailing list is the recommended way to participate but you can also talk to Guohan@Microsoftware who's leading the SAI spec work, his email is gulv@microsoft.com.
+
+
+snmptable -v 2c -c public -M+/centec_switch/mibs -Os 10.10.33.133 SIMPLE-MIB::firstTable -Ci SNMP table: firstTable
+
+# command for= start up snmptrapd:
+./snmptrapd  -c public -f -F "from %A %v\n" -On -Lo -c ./snmptrapd.conf
+#
+#  snmptrapd.conf:
+ authCommunity log,execute,net public
+disableAuthorization yes
+
+snmpwalk -v 2c -c public 10.10.39.135 1.3.6.1.4.1.27975.1.1
+snmpwalk -v 2c -c centec 127.0.0.1 1.3.6.1.2.1.1
+snmpwalk -v 2c -c centec1 10.10.39.135 1.3.6.1.2.1.1
+
+zhangdy(张东亚) 13:45:28
+source /ctcdata/users/sw/zhangdy/script/ofctrlenv.sh
+sloccount .
+就可以统计当前目录的代码了
+
+
+OSP_base Python.core
+cd third_party/precompiled/p1010/
+cd ./python/usr/bin/
+file python
+/opt/fsl-networking/QorIQ-SDK-V1.4/sysroots/i686-fsl_networking_sdk-linux/usr/bin/ppce500v2-fsl_networking-linux-gnuspe/powerpc-fsl_networking-linux-gnuspe-gdb python ~/osp_base/python.core.2015_0715_0934 
+bt
+set sysroot /opt/fsl-networking/Qor
+
+
+http://10.10.25.20/svn/system_docs/trunk/project/32_spec_system_arch/06_whitepaper/盛科交换芯片机架方案介绍.doc
+
+
+zhangdy(张东亚) 10:41:51
+安了个openswitch，可以登陆到38.160上，然后ssh admin@10.10.38.239，密码是admin
+感觉功能比较弱。。。
+liujy(刘敬一) 10:42:30
+ 
+caoj(曹杰) 10:42:45
+我装的在10.10.38.56上
+chenyq(陈玉强) 10:42:25
+ 
+caoj(曹杰) 10:45:59
+ssh root@172.17.0.5
+进去后起vtysh
+
+docker exec -ti ops1 bash
+docker ps
+docker inspect ops1 |grep IP
+
+caoj(曹杰) 13:56:17
+1) modify codes on ops-cli directory
+2) compile 
+make ops-cli-build
+3) install 
+sudo make ops-cli-deploy root@172.17.0.1
+
+
+
+[root@Switch /]$ chvrf 64 tftp -v -Z 10.10.38.160 -c get -r OSP-e580-v1.0.0.19.i
+t.bin
+mv OSP-e580-v1.0.0.19.it.bin  /boot/
+[root@Switch /]$ sync
+[root@Switch /]$ cd /boot/
+[root@Switch /mnt/flash/boot]$ rm -f uImage
+[root@Switch /mnt/flash/boot]$ ln -s OSP-e580-v1.0.0.19.it.bin uImage
+[root@Switch /mnt/flash/boot]$ reboot
+
+ifconfig eth0 10.10.39.104 netmask 255.255.255.0 up
+route add -net 10.10.0.0 netmask 255.255.0.0 gw 10.10.39.254
+
+ifconfig eth0 10.10.39.135 netmask 255.255.255.0 up
+route add -net 10.10.0.0 netmask 255.255.0.0 gw 10.10.39.254
+
+
+ip netns exec mgmt gdbserver 0.0.0.0:60011 --attach 1530
+
+cd osp_sai/out.e580/build.p1010.d/bin/
+powerpc-fsl_networking-linux-gnuspe-gdb fea
+target remote 10.10.39.103:60011
+set sysroot /opt/fsl-networking/QorIQ-SDK-V1.4/sysroots/ppce500v2-fsl_networking-linux-gnuspe/
+set solib-search-path ../lib/powerpc-fsl_networking-linux-gnuspe-gdb fea
+target remote 10.10.39.103:60011
+set sysroot /opt/fsl-networking/QorIQ-SDK-V1.4/sysroots/ppce500v2-fsl_networking-linux-gnuspe/
+set solib-search-path ../lib/
+
+
+sudo sysctl -w net.ipv6.conf.eth0.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.eth2.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.eth3.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.eth4.disable_ipv6=1
+
+
+CTC_CLI(ctc-dkits)# install capture 0 flow 
+CTC_CLI(ctc-dkits)# show path capture 0 detail 
+
+
+	@cd $(SDK_DIR)/script/Auto_generate_api && \
+	sh auto_generate_api.sh humber greatbelt goldengate duet2 && \
+	sh gen_error.sh && \
+	sh opf2str.sh $(CHIPNAME) && \
+	
+netstat -tlunp | grep 80
+
+
+[chenyq2@centecbk urls]$ svn resolve --accept working sys_mgr/log_mgr.py 
+Resolved conflicted state of 'sys_mgr/log_mgr.py'
+[chenyq2@centecbk urls]$ svn revert sys_mgr/log_mgr.py 
+
+read tbl-name Deviceid tbl-index 0 
+ip monitor
+vncserver -geometry 1600x900
+
+可以在GDB或者.gdbinit中加入下面这个函数:
+define pp
+ p $arg0.toString(16,0,0,0)._M_dataplus._M_p
+end
+ 
+然后用pp来打印CBit定义的变量。
+
+CNOS分析内存问题的几个debug命令，大家可以用一下，有什么建议或优化思路可以反馈给我
+CNOS的中使用了2套分配机制
+1. XCALLOC/XMALLOC/XFREE  系统的内存分配机制，所有CDB内存，PM/hsrv/lcm的使用这套机制
+2. mem_malloc/mem_free    SDK提供的内存分配机制，因为SAI只依赖于SDK，所以SAI/SDK的使用这套机制
+
+debug命令有
+exec模式:
+show memory PM             // 查看某个PM的机制2内存分配情况
+
+SDK ctc_shell:
+show memory pool stats all  // 查看机制2内存分配情况(在fea进程中)
+show memory pool detail
+
+internal-debug模式:
+show socket PM detail      // 查看消息队列是否有消息堆积，因为CDB内部为异步消息，所以压力情况下消息队列上也可能消耗大量
+
+
+cnos release code 目录：
+\\10.10.25.8\marketing\02.Marketing_DOC\06.Products_current(word)\01.English\02.Whitebox\12.CNOS\11.Code\CNOS-code-v2.1.1
+\\10.10.25.8\marketing\02.Marketing_DOC\06.Products_current(word)\01.English\02.Whitebox\12.CNOS\11.Code\CNOS-code-adv-v2.1.1
+cnos release doc 目录：
+
+cd ../../../system/ofdpa/oftest/
+. /ctcdata/users/sw/lixd/lixd_env_init.sh
+. /sw/pub/umltools/env_init.sh
+python ./oft -P remote -V 1.3 --test-dir tests-acl/ -T acl_fun_12_check_source_mac_mask_match.test
+
+python ./oft -P remote -V 1.3 --test-dir tests-stats/ -T stats_fun_10_acl_vlan_stats.test
+
+python ./oft -P remote -V 1.3 --test-dir tests-stats/ -T stats_fun_11_src_ip_stats.test
+
+python ./oft -P remote -V 1.3 --test-dir tests-acl/ -T acl_fun_12_check_source_mac_mask_match.test
+
+tmux
+Ctrl B + C 创建新窗口
+Ctrl B + % 水平分屏
+Ctrl B + "　垂直分屏
+Ctrl B + x +　ｙ　关闭窗口
+Ctrl B + 四个箭头，分屏切换
+Ctrl B + 1 2 3 4 直接到某个窗口
+Ctrl B + n 跳转到下一个窗口
+Ctrl B + p 跳转到前一个窗口
+
+openswitch2 10.10.35.101
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+10.10.11.253: 1
+wangqj
+qaz123
+
+mkdir /data01
+mount -t hostfs -o /data01 none /data01
